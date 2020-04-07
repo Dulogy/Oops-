@@ -1,0 +1,42 @@
+ // creating a class ,setters and getters in c++ 
+ 
+ #include<iostream>
+using namespace std; 
+// creating a class with seeters and getters 
+class Student{            
+    public:
+    int rollNumber ;
+    int age ;
+
+    private:
+    string name ;
+
+    public:
+    void display(){
+        cout << name <<"\t"<< age <<"\t" << rollNumber <<"\n";
+    }
+
+    void setName(string s){       // setter to set the name  used for private members name
+        name = s ;
+    }
+
+    string getName(){             // getter to get back the name we set in setter
+        return name ;
+    }
+};
+
+int main(){
+    // creates objects statically
+    Student s1;
+    s1.rollNumber = 100 ;
+    s1.age = 21 ;
+    s1.setName("durgesh") ;    // setting the name in s1 object 
+    s1.display() ;      // calling display function to show all data
+    
+    // create objects dynamically
+    Student * s2 = new Student ;
+    s2 -> rollNumber = 101 ;     //we can also use(*s2).rollNumber in  but arraow function looks good here
+    s2-> age = 20 ;         // use arrow sign to call a function or set value in dynamically created objects
+    s2 -> setName("kumar");
+    s2 -> display() ;
+}
