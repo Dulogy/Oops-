@@ -1,0 +1,33 @@
+// implement deep and shallow copy 
+
+#include<iostream>
+#include<cstring>
+using namespace std ;
+class student{
+private :
+    int age ;
+    char *name ;
+public:
+    student(int age,char *name){
+        this -> age = age ;
+       // shallow copy  this -> name = name ;
+       // deep copy i.e copy whole array element   always use deep copy while working with char arrays
+       this -> name = new char[strlen(name)+1] ;
+       strcpy(this -> name, name) ;
+    }
+    void display(){
+        cout << name << " " << age ;
+    }
+
+};
+int main(){
+    char name[] = "abcd" ;
+    student s1(20,name) ;
+    s1.display() ;
+
+    name[3] = 'x' ;
+    student s2(21,name) ;
+    s2.display() ;
+
+    s1.display() ;
+}
