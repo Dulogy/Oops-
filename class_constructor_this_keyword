@@ -46,4 +46,16 @@ int main(){
     Student *s3 = new Student(102,22,"ddd") ;
     s3 -> display() ;
 
+    // copy constructor 
+    Student s4(s1) ;
+    s4.display() ;
+
+    Student *s5 = new Student(*s3) ;
+    s5 -> display() ;
+
+    Student s6(*s3) ;
+    s6.display() ;
+
+    Student * s7 = new Student(s2) ;
+    s7 -> display() ;
 }
