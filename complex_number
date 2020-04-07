@@ -1,0 +1,49 @@
+// add and multiply 2 complex number
+
+#include<iostream>
+using namespace std;
+class complex{
+    private :
+    int real1,imaginary1 ;
+    public :
+    complex(int real1, int imaginary1){
+        this -> real1 = real1 ;
+        this -> imaginary1 = imaginary1 ;
+    }
+    void plus(complex const & c2){
+        int sr = real1 + c2.real1 ;
+        int si = imaginary1 + c2.imaginary1 ;
+        real1 = sr ;
+        imaginary1 = si ;
+    }
+    void multiply(complex const & c2){
+        int mr = real1 *(c2.real1) - imaginary1*(c2.imaginary1); ;
+        int mi = real1 *(c2.imaginary1) + imaginary1 * (c2.real1) ; ;
+        real1 = mr ;
+        imaginary1 = mi ;
+    }
+    void print(){
+        cout << real1 << "+" << "i" << imaginary1 ;
+    }
+};
+int main(){
+    int real1,imaginary1,real2,imaginary2 ;
+    cin >> real1 >>imaginary1 ;
+    cin >> real2 >> imaginary2 ;
+    complex c1 (real1,imaginary1) ;
+    complex c2 (real2,imaginary2) ;
+    int choice ;
+    cin >> choice ;
+    if(choice == 1){
+        c1.plus(c2) ;
+        c1.print() ;
+    }
+    else if(choice == 2){
+        c1.multiply(c2) ;
+        c1.print() ;
+    }
+    else{
+        return 0 ;
+    }
+    
+}
