@@ -9,6 +9,10 @@ class Student{
     string name ;
 
     public:
+    // call destructor to deallocate memory  it call after all work is done in main function
+    
+    ~student() ;
+    
 // constructor to avoid default values in objects
     // parameterized constructor for 2 arguments
     Student(int rn, int age){
@@ -58,4 +62,14 @@ int main(){
 
     Student * s7 = new Student(s2) ;
     s7 -> display() ;
+    
+    // copy assignment operator 
+     // use after creation of both objects 
+     *s7 = s1 ;
+     s7 -> display() ;
+
+     s6 = s1 ;
+     s6.display() ;
+
+    delete s3,s5,s7 ;  // dynamically created object present in heap so deallocate it manually 
 }
