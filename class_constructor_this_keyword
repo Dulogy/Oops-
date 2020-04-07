@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class Student{
+    public:
+    int rollNumber ;
+    int age ;
+
+    private:
+    string name ;
+
+    public:
+// constructor to avoid default values in objects
+    // parameterized constructor for 2 arguments
+    Student(int rn, int age){
+        this -> rollNumber = rn ;
+        this  -> age = age ;
+    }
+// parameterized constructor for 3 arguments
+    Student(int rn, int age,string name){
+        this -> rollNumber = rn ;
+        this -> age = age ;
+        this -> name = name ;
+    }
+
+    void display(){
+        cout << name <<"\t"<< age <<"\t" << rollNumber <<"\n";
+    }
+
+    void setName(string s){
+        name = s ;
+    }
+
+    string getName(){
+        return name ;
+    }
+    
+};
+int main(){
+    // creates objects statically
+    Student s1(100,21);
+    s1.setName("durgesh") ;
+    s1.display() ;
+    Student s2(101,20,"kumar") ;
+    s2.display() ;
+    // create object dynamically
+    Student *s3 = new Student(102,22,"ddd") ;
+    s3 -> display() ;
+
+}
